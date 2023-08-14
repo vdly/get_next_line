@@ -18,7 +18,7 @@ char    read_basket(int fd, char *basket)
 	int		bytes;
 	
 	bytes = 0;
-	readbuff = malloc(sizeof(char) * (BUFFER_SIZE + 1));o
+	readbuff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	while (ft_strchr(basket, "\n"))
 	{
 		bytes = read(fd, readbuff, BUFFER_SIZE);
