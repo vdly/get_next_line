@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE
-# define GET_NEXT_LINE
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 10
@@ -21,5 +21,8 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
+char	*read_basket(int fd, char *basket);
+char	*extract_apples(char *basket);
+char	*after_newline(char *basket);
 
 #endif
