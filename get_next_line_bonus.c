@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: johii <johii@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 12:52:00 by johii             #+#    #+#             */
-/*   Updated: 2023/09/06 17:19:47 by johii            ###   ########.fr       */
+/*   Created: 2023/09/06 16:35:20 by johii             #+#    #+#             */
+/*   Updated: 2023/09/06 17:02:21 by johii            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_basket(int fd, char *basket)
 {
@@ -89,18 +89,19 @@ char	*after_newline(char *basket, int i, int j)
 
 char	*get_next_line(int fd)
 {
-	static char	*basket;
+	static char	*basket[10240];
 	char		*apples;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	basket = read_basket(fd, basket);
-	if (!basket)
+	basket[fd] = read_basket(fd, basket[fd]);
+	if (!basket[fd])
 		return (0);
-	apples = extract_apples(basket);
-	basket = after_newline(basket, 0, 0);
+	apples = extract_apples(basket[fd]);
+	basket[fd] = after_newline(basket[fd], 0, 0);
 	return (apples);
 }
+
 // #include <stdio.h>
 // int main()
 // {
@@ -109,11 +110,16 @@ char	*get_next_line(int fd)
 // 	int		fd2;
 
 // 	fd = open("text.txt", O_RDONLY);
+// 	fd2 = open("text2.txt", O_RDONLY);
 // 	test = get_next_line(fd);
+// 	free(test);
+// 	test = get_next_line(fd2);
 // 	free(test);
 // 	test = get_next_line(fd);
 // 	free(test);
 // 	test = get_next_line(fd);
 // 	free (test);
-// 	printf("line!!??: %s\n", test);
+// 	test = get_next_line(fd2);
+// 	free(test);
+// 	printf("line returned: %s\n", test);
 // }
