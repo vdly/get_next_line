@@ -25,3 +25,6 @@
 		> -1 means that an error occurs
   
 - function is declared in <unistd.h>
+
+Get_Next_Line Walkthrough
+https://uttermost-tiglon-434.notion.site/15b0e9a5bc834673be4c9e95d3fb1820?v=25c910d7eb694c7d8609c96074b6c54a&pvs=4
