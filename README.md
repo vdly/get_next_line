@@ -26,5 +26,6 @@
   
 - function is declared in <unistd.h>
 
-Get_Next_Line Walkthrough
+# Get_Next_Line Walkthrough/Guide
+
 https://uttermost-tiglon-434.notion.site/15b0e9a5bc834673be4c9e95d3fb1820?v=25c910d7eb694c7d8609c96074b6c54a&pvs=4
